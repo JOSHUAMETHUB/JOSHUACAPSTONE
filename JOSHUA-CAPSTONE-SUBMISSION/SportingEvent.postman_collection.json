@@ -1,0 +1,1157 @@
+{
+	"info": {
+		"_postman_id": "7fd43d78-2c6f-4078-a09f-b32d57392d7f",
+		"name": "SportingEvent",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26839046"
+	},
+	"item": [
+		{
+			"name": "Security",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"user1@gmail.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Authenticate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYW5lQGdtYWlsLmNvbSIsImlhdCI6MTY4NDMzOTEzNCwiZXhwIjoxNjg0OTQzOTM0fQ.gA_U5vF-zQSsVcPOhMmTFPTmR8BYV7fmePiI4D__XMU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"jane@gmail.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/auth/authenticate",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYW5lQGdtYWlsLmNvbSIsImlhdCI6MTY4NDM5NTY3MCwiZXhwIjoxNjg1MDAwNDcwfQ.cQegvFy2_AdhKg5kT8GuYz6RKRGwZyjzmd5l9nydXnE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/auth/logout",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYW5lQGdtYWlsLmNvbSIsImlhdCI6MTY4NDM5NTY3MCwiZXhwIjoxNjg1MDAwNDcwfQ.cQegvFy2_AdhKg5kT8GuYz6RKRGwZyjzmd5l9nydXnE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/v1/auth/refresh-token",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TeamService",
+			"item": [
+				{
+					"name": "Teams",
+					"item": [
+						{
+							"name": "TeamAdd",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ3ZXdAZ21haWwuY29tIiwiaWF0IjoxNjg0MTIwMzA1LCJleHAiOjE2ODQ3MjUxMDV9.eHKzZ7j81by-RBbJB9BuRgIR5nnIh-jAljCxnnsFU0s",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"TEST\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/v1/teams/add",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"teams",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Teams",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraW1AZ21haWwuY29tIiwiaWF0IjoxNjg0MjkxNzY3LCJleHAiOjE2ODQ4OTY1Njd9.zBlMPYkJhbazPLUQ1ZwqMSUY5ZPxIf6md_O0GhLgSes",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/v1/teams",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"teams"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "TeamsUpdate",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraW1AZ21haWwuY29tIiwiaWF0IjoxNjg0MjkxNzY3LCJleHAiOjE2ODQ4OTY1Njd9.zBlMPYkJhbazPLUQ1ZwqMSUY5ZPxIf6md_O0GhLgSes",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"TEST UPDATE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/v1/teams/update/2",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"teams",
+										"update",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "TeamsDeleteById",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/v1/teams/delete/id/13",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"teams",
+										"delete",
+										"id",
+										"13"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "TeamsDeleteByName",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/v1/teams/delete/name/test",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"teams",
+										"delete",
+										"name",
+										"test"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Players",
+					"item": [
+						{
+							"name": "PlayersAdd",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraW1AZ21haWwuY29tIiwiaWF0IjoxNjg0MjU5Njk5LCJleHAiOjE2ODQ4NjQ0OTl9.HxRVscUw8Ot14KkWrs3sZ2ZYB1pbJZM6CBRqgKLUmBI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"TEST\",\r\n    \"lastName\": \"DOE\",\r\n    \"country\": \"USA\",\r\n    \"teamId\":3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/v1/players/add",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"players",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Players",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraW1AZ21haWwuY29tIiwiaWF0IjoxNjg0MjE5NjM2LCJleHAiOjE2ODQ4MjQ0MzZ9.5J4Ah7PyQRFauIsy4D_7rTK2Daqg5kUwAfFNXhvlhv4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/v1/players",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"players"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PlayersUpdate",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraW1AZ21haWwuY29tIiwiaWF0IjoxNjg0MjE5NjM2LCJleHAiOjE2ODQ4MjQ0MzZ9.5J4Ah7PyQRFauIsy4D_7rTK2Daqg5kUwAfFNXhvlhv4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"nino\",\r\n    \"lastName\": \"Joshua\",\r\n    \"country\": \"ph\",\r\n    \"teamId\":4\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/v1/players/update/5",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"players",
+										"update",
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PlayersDelete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ3ZXdAZ21haWwuY29tIiwiaWF0IjoxNjg0MTIwMzA1LCJleHAiOjE2ODQ3MjUxMDV9.eHKzZ7j81by-RBbJB9BuRgIR5nnIh-jAljCxnnsFU0s",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/v1/players/delete/3",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"players",
+										"delete",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "TicketingService",
+			"item": [
+				{
+					"name": "SportField",
+					"item": [
+						{
+							"name": "SportFieldsAdd",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraW1AZ21haWwuY29tIiwiaWF0IjoxNjg0MjU1NDI5LCJleHAiOjE2ODQ4NjAyMjl9.SoK1boAoCQo8DrRkM0AapDXFFdZXEnpFJ7Bu-jACF2k",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"KALYE\",\r\n    \"address\":\"Squatters area 51, Elm Street , Tondo\",\r\n    \"capacity\":10000\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/v1/sport-fields/add",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"sport-fields",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SportFields",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaGVlc2hAZ21haWwuY29tIiwiaWF0IjoxNjgzODc1ODc3LCJleHAiOjE2ODQ0ODA2Nzd9.wy_DGSPwdaw66jMJwV7TM_cI8_4zxxCkxOdWmpKIg4Y",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Bearer",
+										"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaGVlc2hAZ21haWwuY29tIiwiaWF0IjoxNjgzODc1ODc3LCJleHAiOjE2ODQ0ODA2Nzd9.wy_DGSPwdaw66jMJwV7TM_cI8_4zxxCkxOdWmpKIg4Y",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/api/v1/sport-fields",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"sport-fields"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetSportFieldById",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaGVlc2hAZ21haWwuY29tIiwiaWF0IjoxNjgzODc1ODc3LCJleHAiOjE2ODQ0ODA2Nzd9.wy_DGSPwdaw66jMJwV7TM_cI8_4zxxCkxOdWmpKIg4Y",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/v1/sport-fields/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"sport-fields",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SportFieldsUpdate",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaGVlc2hAZ21haWwuY29tIiwiaWF0IjoxNjgzODc1ODc3LCJleHAiOjE2ODQ0ODA2Nzd9.wy_DGSPwdaw66jMJwV7TM_cI8_4zxxCkxOdWmpKIg4Y",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"name\": \"RMA STADIUM\",\r\n        \"address\": \"MOA\",\r\n        \"capacity\": 10000\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/v1/sport-fields/update/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"sport-fields",
+										"update",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SportFieldsDelete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaGVlc2hAZ21haWwuY29tIiwiaWF0IjoxNjgzODc1ODc3LCJleHAiOjE2ODQ0ODA2Nzd9.wy_DGSPwdaw66jMJwV7TM_cI8_4zxxCkxOdWmpKI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/v1/sport-fields/delete/2",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"sport-fields",
+										"delete",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Ticket",
+					"item": [
+						{
+							"name": "Tickets",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYW5lQGdtYWlsLmNvbSIsImlhdCI6MTY4NDM5NTY3MCwiZXhwIjoxNjg1MDAwNDcwfQ.cQegvFy2_AdhKg5kT8GuYz6RKRGwZyjzmd5l9nydXnE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/v1/tickets",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"tickets"
+									],
+									"query": [
+										{
+											"key": "ticketPrice",
+											"value": "5000",
+											"disabled": true
+										},
+										{
+											"key": "customerName",
+											"value": "JAKE Salimbao",
+											"disabled": true
+										},
+										{
+											"key": "sportMatchId",
+											"value": "1",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "TicketsAdd",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYW5lQGdtYWlsLmNvbSIsImlhdCI6MTY4NDM5NTk1MiwiZXhwIjoxNjg1MDAwNzUyfQ.dAxCUEA1cbUF3R73WvGGj-HUaXZT3l_8xY12ZTBitSQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"customerName\": \"Jane V SALIMBAO\",\r\n    \"ticketPrice\": 2000,\r\n    \"sportMatch\": 19\r\n\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/v1/tickets/add",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"tickets",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "EditTicket",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYW5lQGdtYWlsLmNvbSIsImlhdCI6MTY4NDMzOTE1NSwiZXhwIjoxNjg0OTQzOTU1fQ.F4HzvqyTg4vT7zB_ax9lqSHTeA8tBjx79EAEHVdVDCc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ticketPrice\": 7000.0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/v1/tickets/update/16",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"tickets",
+										"update",
+										"16"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteTicket",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ticketPrice\": 5000.0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/v1/tickets/delete/3",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"tickets",
+										"delete",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "SportMatch",
+					"item": [
+						{
+							"name": "SportMatchAdd",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYW5lQGdtYWlsLmNvbSIsImlhdCI6MTY4NDMzOTE1NSwiZXhwIjoxNjg0OTQzOTU1fQ.F4HzvqyTg4vT7zB_ax9lqSHTeA8tBjx79EAEHVdVDCc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"sportField\":14,\r\n   \"tournament\":7,\r\n    // \"teams\": [1,2],\r\n    \"participants\": [10,7,9],\r\n    \"dateTime\": \"2024-02-01\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/v1/sport-match/add",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"sport-match",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Sportmatchs",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJraW1AZ21haWwuY29tIiwiaWF0IjoxNjg0MjkxNzY3LCJleHAiOjE2ODQ4OTY1Njd9.zBlMPYkJhbazPLUQ1ZwqMSUY5ZPxIf6md_O0GhLgSes",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/v1/sport-match",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"sport-match"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SportmatchById",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaGVlc2hAZ21haWwuY29tIiwiaWF0IjoxNjgzOTY5MzI2LCJleHAiOjE2ODQ1NzQxMjZ9.vOtp3mG_k8w7Wya_Mk_iAyOr3FE3s8SzhVce719DT8E",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/v1/sport-match/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"sport-match",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SportmatchByFieldId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/v1/sport-match/field/7",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"sport-match",
+										"field",
+										"7"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteById",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/v1/sport-match/delete/5",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"sport-match",
+										"delete",
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateById",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYW5lQGdtYWlsLmNvbSIsImlhdCI6MTY4NDMzOTE1NSwiZXhwIjoxNjg0OTQzOTU1fQ.F4HzvqyTg4vT7zB_ax9lqSHTeA8tBjx79EAEHVdVDCc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"sportField\":14,\r\n   \"tournament\":7,\r\n    \"teams\": [1,3],\r\n    \"participants\": [7,9],\r\n    \"dateTime\": \"2024-02-01\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/v1/sport-match/update/18",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"sport-match",
+										"update",
+										"18"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Tournament",
+					"item": [
+						{
+							"name": "TournamentAdd",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYW5lQGdtYWlsLmNvbSIsImlhdCI6MTY4NDMzOTE1NSwiZXhwIjoxNjg0OTQzOTU1fQ.F4HzvqyTg4vT7zB_ax9lqSHTeA8tBjx79EAEHVdVDCc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"TOURNAMENT TEST\",\r\n    \"category\":\"PATINTERO\",\r\n    \"style\":\"ROUND ROBIN TEAM VS TEAM\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/v1/tournaments/add",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"tournaments",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "TournamentUpdate",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaGVlc2hAZ21haWwuY29tIiwiaWF0IjoxNjgzOTA3ODE3LCJleHAiOjE2ODQ1MTI2MTd9._xDtEYXdZwBW4B2CffQQLfjAxbHlG1R2IzxQKl2_NQc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"BONAKNAMALAKI\",\r\n    \"category\":\"SOCCER\",\r\n    \"style\":\"Missionary\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/v1/tournaments/update/2",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"tournaments",
+										"update",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "TournamentDelete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaGVlc2hAZ21haWwuY29tIiwiaWF0IjoxNjgzOTA3ODE3LCJleHAiOjE2ODQ1MTI2MTd9._xDtEYXdZwBW4B2CffQQLfjAxbHlG1R2IzxQKl2_NQc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/v1/tournaments/delete/2",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"tournaments",
+										"delete",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "TournamenGet",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYW5lQGdtYWlsLmNvbSIsImlhdCI6MTY4NDMzOTE1NSwiZXhwIjoxNjg0OTQzOTU1fQ.F4HzvqyTg4vT7zB_ax9lqSHTeA8tBjx79EAEHVdVDCc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/api/v1/tournaments",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"tournaments"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

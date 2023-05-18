@@ -25,7 +25,7 @@ public class AuthenticationController {
 
     @GetMapping("/Hello")
     public ResponseEntity<String> sayHello() {
-        return ResponseEntity.ok("FUCK YOU");
+        return ResponseEntity.ok("HEY YOU");
     }
 
     @PostMapping("/register/admin")
